@@ -8,6 +8,8 @@ from alembic import context
 from core.db import POSTGRESQL_URI, BaseMeta
 
 from account.models import Account
+from user.models import User
+from payments.models import MemberAccount
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

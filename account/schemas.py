@@ -1,4 +1,21 @@
-from account.models import Account
+from pydantic import BaseModel
+
+from user.schemas import UserResponse
 
 
-RequestAccount = Account.get_pydantic(exclude={"id": ...})
+class RequestAccount(BaseModel):
+    class Config:
+        orm_mode = True
+
+    name: str
+    login: str
+    password: str
+
+
+class AccountListResponseSchema(RequestAccount):
+    id: int
+
+
+class AccountResponseSchema(AccountListResponseSchema):
+    user: UserResponse
+

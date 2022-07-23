@@ -1,12 +1,7 @@
-import os
 import databases
 import ormar
 import sqlalchemy as sa
-
-POSTGRES_USER = os.getenv("POSTGRES_USER")
-POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD")
-POSTGRES_DB = os.getenv("POSTGRES_DB")
-POSTGRES_SERVER = os.getenv("POSTGRES_SERVER")
+from core.settings import *
 
 POSTGRESQL_URI = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_SERVER}:5432/{POSTGRES_DB}"
 
