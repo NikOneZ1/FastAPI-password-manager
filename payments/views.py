@@ -18,7 +18,6 @@ async def create_checkout_session(price_id: str, user: User = Depends(get_curren
     try:
         price = stripe.Price.retrieve(price_id)
         member_account = await MemberAccount.objects.first(user=user)
-        print(f"Member account {member_account.id}"*50)
         checkout_session = stripe.checkout.Session.create(
             line_items=[
                 {
