@@ -10,3 +10,6 @@
  - Stripe
  - Custom JWT implementation
  - Sendgrid
+ - Docker
+ - Docker-compose
+ 
